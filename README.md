@@ -11,3 +11,7 @@ Install pre-commit hooks:
 Run program:
 
     go run main.go
+    
+## See also
+
+https://github.com/CMiksche/benfordslaw A JavaScript / TypeScript npm Package implementation of this benford's law check
