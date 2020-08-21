@@ -1,1 +1,3 @@
-module https://github.com/CMiksche/benford
+module github.com/CMiksche/benford
+
+go 1.15
