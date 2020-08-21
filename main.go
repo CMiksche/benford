@@ -1,11 +1,13 @@
 package main
 
-//nolint
-type benford struct {
-	dist        []float32
-	chiSquared  float32
-	probability float32
-	terms       []float32
+import (
+	"gonum.org/v1/gonum/stat"
+)
+
+// Benford result of the Benfords TEest
+type Benford struct {
+	dist       []float64
+	chiSquared float64
 }
 
 // firstDigit returns only the first digit of each number but no zeroes
@@ -56,23 +58,22 @@ func countOccurrences(numbers []int) []int {
 }
 
 // Get the distribution of 1 to 9 in the number array
-func countDistribution(occurrences []int) []float32 {
-	sum := float32(0)
-	res := []float32{}
+func countDistribution(occurrences []int) []float64 {
+	sum := float64(0)
+	res := []float64{}
 	for _, value := range occurrences {
-		sum = sum + float32(value)
+		sum = sum + float64(value)
 	}
 	for _, value := range occurrences {
-		n := float32(value) / sum
+		n := float64(value) / sum
 		res = append(res, n)
 	}
 	return res
 }
 
-// Get a struct with information about how well benfords law was matched
-//nolint
-func calcBenfords(numbers []int) benford {
-	benfordNumbers := [9]float32{
+// CalcBenfords get a struct with information about how well benfords law was matched
+func CalcBenfords(numbers []int) Benford {
+	benfordNumbers := []float64{
 		0.301, // 1
 		0.176, // 2
 		0.125, // 3
@@ -85,11 +86,6 @@ func calcBenfords(numbers []int) benford {
 	}
 	occurrences := countOccurrences(firstDigit(numbers))
 	dist := countDistribution(occurrences)
-	// TODO: calc actual chi2
-	chiSquared := benfordNumbers[0]
-	return benford{dist: dist, chiSquared: chiSquared}
-}
-
-func main() {
-
+	chiSquared := stat.ChiSquare(dist, benfordNumbers)
+	return Benford{dist: dist, chiSquared: chiSquared}
 }
