@@ -4,7 +4,9 @@ import (
 	"gonum.org/v1/gonum/stat"
 )
 
-// Benford result of the Benfords TEest
+// Benford = result of the Benford's Test
+// dist is a array with float64 which describe the distribution of the numbers 1 to 9
+// chiSquared is a float and describes how well Benford's Law was matched. Lower is better.
 type Benford struct {
 	dist       []float64
 	chiSquared float64
@@ -71,7 +73,7 @@ func countDistribution(occurrences []int) []float64 {
 	return res
 }
 
-// CalcBenfords get a struct with information about how well benfords law was matched
+// CalcBenfords takes a array of integers and returns a struct with information about how well benfords law was matched
 func CalcBenfords(numbers []int) Benford {
 	benfordNumbers := []float64{
 		0.301, // 1
