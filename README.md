@@ -26,11 +26,9 @@ E.g.:
         // distribution array of the numbers 1 to 9 in the input number array
     }
 
-The ChiSquared result is a float and describes how well Benford's Law was matched. Lower is better.
+The CalcBenfords().ChiSquared result is a float and describes how well Benford's Law was matched. Lower is better.
 
-The Probability describes how relevant ChiSquared is. It should be >= 0.9
-
-getDist() returns the distribution of the numbers.
+CalcBenfords().Dist returns the distribution of the numbers 1 to 9 in the input array.
 
 ## Development
 
