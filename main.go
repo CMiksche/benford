@@ -4,12 +4,12 @@ import (
 	"gonum.org/v1/gonum/stat"
 )
 
-// Benford = result of the Benford's Test
-// dist is a array with float64 which describe the distribution of the numbers 1 to 9
-// chiSquared is a float and describes how well Benford's Law was matched. Lower is better.
+// Benford = result of the Benford's Test,
+// Benford.Dist is a array with float64 which describe the distribution of the numbers 1 to 9,
+// Benford.ChiSquared is a float and describes how well Benford's Law was matched. Lower is better.
 type Benford struct {
-	dist       []float64
-	chiSquared float64
+	Dist       []float64
+	ChiSquared float64
 }
 
 // firstDigit returns only the first digit of each number but no zeroes
@@ -89,5 +89,5 @@ func CalcBenfords(numbers []int) Benford {
 	occurrences := countOccurrences(firstDigit(numbers))
 	dist := countDistribution(occurrences)
 	chiSquared := stat.ChiSquare(dist, benfordNumbers)
-	return Benford{dist: dist, chiSquared: chiSquared}
+	return Benford{Dist: dist, ChiSquared: chiSquared}
 }
