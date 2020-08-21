@@ -28,10 +28,31 @@ func firstDigit(numbers []int) []int {
 	return new
 }
 
+// Count the occurrences of one number
+func countOccurrencesOfOne(numbers []int, searched int) int {
+	var res int
+	res = 0
+
+	for i := 0; i < len(numbers); i++ {
+		if numbers[i] == searched {
+			res = res + 1
+		}
+	}
+
+	return res
+}
+
 // Count the occurrences of every number in a array
-//nolint
 func countOccurrences(numbers []int) []int {
-	return nil
+	var res []int
+	var searched = [9]int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+	for i := 0; i < len(searched); i++ {
+		found := countOccurrencesOfOne(numbers, searched[i])
+		res = append(res, found)
+	}
+
+	return res
 }
 
 // Get the distribution of 1 to 9 in the number array
