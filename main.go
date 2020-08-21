@@ -1,4 +1,4 @@
-package main
+package benford
 
 import (
 	"gonum.org/v1/gonum/stat"

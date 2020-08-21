@@ -1,11 +1,13 @@
 # benford
 
-Check the benford's law
+[![Build Status](https://cloud.drone.io/api/badges/CMiksche/benford/status.svg)](https://cloud.drone.io/CMiksche/benford)
+
+Check if a number array confirms to the Benford's Law
 
 ## Install
 
     go get -u github.com/CMiksche/benford
-    
+
 ## Usage
 
 Look at the tests for good examples.
