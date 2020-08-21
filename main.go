@@ -56,9 +56,17 @@ func countOccurrences(numbers []int) []int {
 }
 
 // Get the distribution of 1 to 9 in the number array
-//nolint
 func countDistribution(occurrences []int) []float32 {
-	return nil
+	sum := float32(0)
+	res := []float32{}
+	for _, value := range occurrences {
+		sum = sum + float32(value)
+	}
+	for _, value := range occurrences {
+		n := float32(value) / sum
+		res = append(res, n)
+	}
+	return res
 }
 
 // Get a struct with information about how well benfords law was matched
