@@ -42,4 +42,5 @@ Test program:
 
 ## See also
 
-https://github.com/CMiksche/benfordslaw A JavaScript / TypeScript npm Package implementation of this benford's law check
+* https://github.com/CMiksche/benfordslaw A JavaScript / TypeScript npm Package implementation of this benford's law check
+* https://github.com/CMiksche/benfordslaw.cr A Crystal implementation of this benford's law check
