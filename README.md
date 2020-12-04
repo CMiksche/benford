@@ -1,6 +1,7 @@
 # benford
 
 [![Build Status](https://cloud.drone.io/api/badges/CMiksche/benford/status.svg)](https://cloud.drone.io/CMiksche/benford)
+[![Go Report Card](https://goreportcard.com/badge/github.com/CMiksche/benford)](https://goreportcard.com/report/github.com/CMiksche/benford)
 
 Check if a number array confirms to the Benford's Law
 
